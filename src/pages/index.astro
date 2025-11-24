@@ -1,16 +1,101 @@
 ---
+// Importa tu layout base y cualquier otro componente
+import BaseLayout from '../layouts/BaseLayout.astro'; 
 
+// Lógica de servidor (Frontmatter):
+// 1. Cargamos todos los archivos Markdown de la carpeta 'proyectos'.
+//    Ajusta la ruta si es necesario (ej: './proyectos/**/*.md')
+const allProjects = await Astro.glob('../pages/proyectos/*.md');
+
+// 2. Opcional: Filtramos solo los 3 o 4 mejores proyectos para la Home
+const featuredProjects = allProjects
+    .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)) // Ordenar por fecha
+    .slice(0, 4); // Tomar solo los primeros 4
+
+// Definiciones de datos estáticos para el Hero
+const myName = "B1tcod3";
+const tagline = "Construimos soluciones tecnológicas con alto rendimiento y calidad";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Inicio | B1tcod3">
+
+  <section class="mb-16 pt-10">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 
+               text-blue-600 dark:text-blue-400">
+      {myName}
+    </h1>
+    <p class="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mb-8">
+      {tagline}
+    </p>
+
+    <div class="flex gap-4">
+      <a href="#proyectos-destacados" 
+         class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg 
+                hover:bg-blue-700 transition duration-300 shadow-md">
+        Ver Proyectos Destacados
+      </a>
+      <a href="/acerca-de" 
+         class="bg-transparent text-gray-700 dark:text-gray-300 font-semibold py-3 px-6 rounded-lg 
+                border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">
+        Conoce Mi Enfoque
+      </a>
+    </div>
+  </section>
+
+  ---
+  
+  <section id="proyectos-destacados" class="py-12">
+    <h2 class="text-3xl font-bold mb-8 border-b-2 pb-2 
+               border-blue-200 dark:border-blue-800">
+      🚀 Proyectos
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {featuredProjects.map((project) => (
+        <article class="p-6 border rounded-xl shadow-lg 
+                        bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 
+                        hover:shadow-xl transition duration-300">
+          
+          <h3 class="text-2xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+            <a href={project.url} class="hover:text-blue-600 dark:hover:text-blue-400">
+              {project.frontmatter.title}
+            </a>
+          </h3>
+          
+          <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+            {project.frontmatter.description}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            {project.frontmatter.tags && project.frontmatter.tags.map(tag => (
+              <span class="text-xs font-medium px-3 py-1 rounded-full 
+                            bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <a href={project.url} 
+             class="text-blue-600 dark:text-blue-400 font-semibold text-sm 
+                    hover:underline flex items-center gap-1">
+            Ver Detalles Completo →
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  ---
+
+  <section class="text-center py-10">
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+      ¿Quieres ver más ideas y colaboraciones?
+    </p>
+    <a href="/proyectos" 
+       class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold 
+              py-3 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-300">
+      Explorar todo el Archivo de Proyectos
+    </a>
+  </section>
+
+</BaseLayout>

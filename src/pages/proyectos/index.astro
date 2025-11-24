@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Astro.glob lee todos los archivos MD de la carpeta actual
+const allProjects = await Astro.glob('./*.md');
+---
+
+<BaseLayout title="Mis Proyectos">
+  <h1 class="text-4xl font-bold mb-8">Galería de Proyectos</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    {allProjects.map((project) => (
+      <article class="border p-6 rounded-lg bg-white shadow hover:shadow-lg transition">
+        <h2 class="text-2xl font-bold text-blue-600">
+          <a href={project.url}>{project.frontmatter.title}</a>
+        </h2>
+        
+        <p class="text-gray-600 mt-2">
+          {project.frontmatter.description}
+        </p>
+        
+        <div class="mt-4 text-sm text-gray-400">
+           Etiquetas: {project.frontmatter.tags.join(', ')}
+        </div>
+      </article>
+    ))}
+
+  </div>
+</BaseLayout>

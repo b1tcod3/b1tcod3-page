@@ -1,0 +1,73 @@
+---
+// src/layouts/BaseLayout.astro
+
+const { title } = Astro.props;
+
+// 1. Asegúrate que tu CSS de Tailwind esté importado aquí
+import '../styles/global.css'; 
+
+import ThemeToggle from '../components/ThemeToggle.astro';
+import IconGithub from '../components/icons/IconGithub.astro';
+import IconLinkedIn from '../components/icons/IconLinkedIn.astro';
+
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  
+  <body class="bg-slate-50 text-slate-800 font-sans 
+               dark:bg-gray-900 dark:text-gray-100">
+    
+    <nav class="p-6 border-b bg-white dark:bg-gray-800 dark:border-gray-700">
+      <ul class="flex gap-4 font-bold items-center justify-between">
+        <div class="flex gap-4">
+            <li><a href="/" class="hover:text-blue-600 dark:hover:text-blue-400">Inicio</a></li>
+            <li><a href="/proyectos" class="hover:text-blue-600 dark:hover:text-blue-400">Proyectos</a></li>
+        </div>
+        
+        <li>
+            <ThemeToggle />
+        </li>
+      </ul>
+    </nav>
+
+    <main class="max-w-3xl mx-auto p-6">
+      <slot /> 
+    </main>
+
+    <footer class="mt-16 py-8 border-t 
+                   bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 
+                   text-center">
+      
+      <div class="flex justify-center space-x-6 mb-4">
+        
+        <a href="TU_ENLACE_GITHUB" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-2xl"
+           aria-label="GitHub">
+            <IconGithub class="w-6 h-6" />
+            <span class="sr-only">Github</span>
+        </a>
+
+        <a href="TU_ENLACE_LINKEDIN" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-2xl"
+           aria-label="LinkedIn">
+           <IconLinkedIn class="w-6 h-6" />
+           <span class="sr-only">LinkedIn</span>
+        </a>
+
+      </div>
+
+      <p class="text-sm text-gray-500 dark:text-gray-500">
+        © {new Date().getFullYear()} Mi Portafolio Ligero. Construido con Astro y TailwindCSS.
+      </p>
+    </footer>
+  </body>
+</html>

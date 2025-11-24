@@ -1,0 +1,59 @@
+---
+// src/components/ThemeToggle.astro
+
+// Este script se ejecutará en el cliente (navegador).
+// 'is:inline' asegura que el script sea pequeño y se cargue rápidamente.
+// La etiqueta <script> normal en Astro también se carga bien y es el default.
+import IconMoon from '../components/icons/IconMoon.astro';
+import IconSun from '../components/icons/IconSun.astro';    
+---
+
+<button id="themeToggle" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+    <span class="light-icon">
+        <IconMoon hidden/>
+    </span>
+    <span class="dark-icon" hidden>
+        
+        <IconSun/>
+    </span>
+</button>
+
+<script>
+    const STORAGE_KEY = 'theme';
+    const htmlEl = document.documentElement;
+    const toggleButton = document.getElementById('themeToggle');
+    const lightIcon = document.querySelector('.light-icon');
+    const darkIcon = document.querySelector('.dark-icon');
+
+    // Función de actualización de interfaz y almacenamiento
+    function updateTheme(isDark) {
+        if (isDark) {
+            htmlEl.classList.add('dark');
+            lightIcon.hidden = true;
+            darkIcon.hidden = false;
+            localStorage.setItem(STORAGE_KEY, 'dark');
+        } else {
+            htmlEl.classList.remove('dark');
+            lightIcon.hidden = false;
+            darkIcon.hidden = true;
+            localStorage.setItem(STORAGE_KEY, 'light');
+        }
+    }
+
+    // 1. Lógica de inicialización: Leer del almacenamiento local o del sistema.
+    const storedTheme = localStorage.getItem(STORAGE_KEY);
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Si no hay preferencia guardada, usar la del sistema. Si hay, usar la guardada.
+    const initialDark = (storedTheme === 'dark') || (!storedTheme && prefersDark);
+    updateTheme(initialDark);
+
+
+    // 2. Evento del botón: Alternar entre temas.
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            const isCurrentlyDark = htmlEl.classList.contains('dark');
+            updateTheme(!isCurrentlyDark);
+        });
+    }
+</script>
