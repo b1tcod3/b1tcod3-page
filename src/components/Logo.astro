@@ -1,17 +1,24 @@
+---
+// src/components/icons/LogoCodeData.astro
+// Este componente solo contiene el SVG del logo, sin texto.
+// La prop 'className' permite aplicar clases de Tailwind para tamaño y color.
+const { class: className } = Astro.props;
+---
 <svg width="200" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+class={`w-8 h-8 ${className}`}
 >
   <defs>
     <style>
       .icon-stroke {
         fill: none;
-        stroke: #ffffff; /* Azul oscuro */
+        stroke: var(--logo-stroke);
         stroke-width: 7;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
       .node-circle {
-        fill: #ffffff; /* Relleno blanco para tapar las lineas de conexión */
-        stroke: #003366;
+        fill: var(--logo-fill);
+        stroke: var(--logo-stroke);
         stroke-width: 7;
       }
     </style>

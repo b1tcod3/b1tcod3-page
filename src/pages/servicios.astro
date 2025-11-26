@@ -1,0 +1,110 @@
+---
+// src/pages/servicios.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Nuestros Servicios | Portafolio Ligero">
+  <section class="py-12">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 text-center 
+               text-blue-600 dark:text-blue-400">
+      Lo que podemos ofrecerte
+    </h1>
+    <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-center mb-10 leading-relaxed">
+      Enfocados en la eficiencia y el rendimiento, ofrecemos soluciones personalizadas que van desde el desarrollo web ligero hasta el análisis avanzado de datos, siempre con la meta de entregar valor y velocidad.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
+      {/* Sección de Programación */}
+      <article class="p-8 border rounded-xl shadow-lg 
+                      bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <h2 class="text-3xl font-bold mb-6 text-blue-600 dark:text-blue-400 flex items-center gap-3">
+          <span class="text-4xl">💻</span> Programación
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+          Especializados en construir soluciones robustas y optimizadas, minimizando la complejidad y maximizando el rendimiento.
+        </p>
+        
+        <ul class="list-none space-y-6">
+          <li>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 flex items-center gap-2">
+              <span class="text-blue-500">◆</span> Desarrollo Web y APIs Ligeras
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 pl-7">
+              Diseño y desarrollo de sitios web estáticos (SSG) de ultra-alto rendimiento con Astro. Construcción de APIs RESTful eficientes y micro-servicios en Node.js, ideales para aplicaciones con requisitos de baja latencia.
+            </p>
+          </li>
+          <li>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 flex items-center gap-2">
+              <span class="text-blue-500">◆</span> Scripts y Automatización
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 pl-7">
+              Creación de scripts personalizados en JavaScript (Node.js) para automatizar tareas repetitivas, procesar datos, integrar sistemas o interactuar con APIs externas, mejorando la eficiencia operativa.
+            </p>
+          </li>
+          <li>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 flex items-center gap-2">
+              <span class="text-blue-500">◆</span> Optimización de Frontend
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 pl-7">
+              Auditoría exhaustiva y optimización de las Core Web Vitals y métricas de rendimiento (LCP, FID, CLS). Técnicas avanzadas de minimización de assets, carga diferida y caching para una experiencia de usuario instantánea.
+            </p>
+          </li>
+        </ul>
+      </article>
+
+      {/* Sección de Ciencia de Datos */}
+      <article class="p-8 border rounded-xl shadow-lg 
+                      bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <h2 class="text-3xl font-bold mb-6 text-green-600 dark:text-green-400 flex items-center gap-3">
+          <span class="text-4xl">📊</span> Ciencia de Datos
+        </h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+          Transformamos datos crudos en información accionable, utilizando herramientas y técnicas avanzadas para revelar patrones y predecir tendencias.
+        </p>
+        
+        <ul class="list-none space-y-6">
+          <li>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 flex items-center gap-2">
+              <span class="text-green-500">◆</span> Análisis Predictivo y Modelado
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 pl-7">
+              Desarrollo e implementación de modelos de Machine Learning (regresión, clasificación, clustering) y Deep Learning. Desde la limpieza de datos hasta la evaluación del modelo y la generación de predicciones robustas.
+            </p>
+          </li>
+          <li>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 flex items-center gap-2">
+              <span class="text-green-500">◆</span> Visualización de Datos e Informes
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 pl-7">
+              Creación de dashboards interactivos y reportes claros que comunican insights complejos de forma sencilla, permitiendo una toma de decisiones informada.
+            </p>
+          </li>
+          <li>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 flex items-center gap-2">
+              <span class="text-green-500">◆</span> Procesamiento y Limpieza de Datos (ETL)
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 pl-7">
+              Diseño y construcción de pipelines ETL para extraer datos de diversas fuentes, transformarlos y cargarlos en sistemas analíticos o bases de datos, garantizando la calidad y consistencia.
+            </p>
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="text-center py-12 mt-10 border-t 
+                   border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+        ¿Interesado en una colaboración?
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        Cuéntame sobre tu proyecto o necesidad específica.
+      </p>
+      <a href="/contacto" 
+         class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg 
+                hover:bg-blue-700 transition duration-300 shadow-md">
+        Contáctame Ahora
+      </a>
+    </div>
+
+  </section>
+</BaseLayout>

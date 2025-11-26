@@ -14,7 +14,7 @@ const featuredProjects = allProjects
 
 // Definiciones de datos estáticos para el Hero
 const myName = "B1tcod3";
-const tagline = "Construimos soluciones tecnológicas con alto rendimiento y calidad";
+const tagline = "Hacemos realidad tus ideas digitales de manera confiable y eficiente.";
 ---
 
 <BaseLayout title="Inicio | B1tcod3">
@@ -34,6 +34,11 @@ const tagline = "Construimos soluciones tecnológicas con alto rendimiento y cal
                 hover:bg-blue-700 transition duration-300 shadow-md">
         Ver Proyectos Destacados
       </a>
+      <a href="#servicios" 
+         class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg 
+                hover:bg-blue-700 transition duration-300 shadow-md">
+        Que ofrecemos
+      </a>
       <a href="/acerca-de" 
          class="bg-transparent text-gray-700 dark:text-gray-300 font-semibold py-3 px-6 rounded-lg 
                 border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">
@@ -41,8 +46,86 @@ const tagline = "Construimos soluciones tecnológicas con alto rendimiento y cal
       </a>
     </div>
   </section>
+  
+  <section id="servicios" class="py-12 border-t border-gray-200 dark:border-gray-700">
+    <h2 class="text-3xl font-bold mb-8 text-center 
+               text-gray-800 dark:text-gray-100">
+      Lo que puedo ofrecerte
+    </h2>
 
-  ---
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Categoría: Programación */}
+      <article class="p-6 border rounded-xl shadow-lg 
+                      bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">
+          <span class="mr-2">💻</span> Programación
+        </h3>
+        <ul class="list-none space-y-3 text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="text-blue-500 mt-1">✓</span> 
+            <div>
+              <strong class="block text-gray-800 dark:text-gray-100">Desarrollo Web / APIs Ligeras:</strong>
+              Creación de sitios estáticos de alto rendimiento con Astro, SPAs con JS Vanilla o micro-servicios y APIs RESTful.
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-500 mt-1">✓</span> 
+            <div>
+              <strong class="block text-gray-800 dark:text-gray-100">Scripts de Automatización:</strong>
+              Desarrollo de scripts en JavaScript (Node.js) para optimizar flujos de trabajo, procesamiento de datos o interacción con servicios.
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-500 mt-1">✓</span> 
+            <div>
+              <strong class="block text-gray-800 dark:text-gray-100">Optimización de Frontend:</strong>
+              Auditoría y mejora de Core Web Vitals, optimización de carga de activos y rendimiento general de la interfaz de usuario.
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      {/* Categoría: Ciencia de Datos */}
+      <article class="p-6 border rounded-xl shadow-lg 
+                      bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <h3 class="text-2xl font-bold mb-4 text-green-600 dark:text-green-400">
+          <span class="mr-2">📊</span> Ciencia de Datos
+        </h3>
+        <ul class="list-none space-y-3 text-gray-700 dark:text-gray-300">
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 mt-1">✓</span> 
+            <div>
+              <strong class="block text-gray-800 dark:text-gray-100">Análisis Predictivo:</strong>
+              Desarrollo de modelos predictivos para identificar tendencias, patrones y pronosticar eventos futuros.
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 mt-1">✓</span> 
+            <div>
+              <strong class="block text-gray-800 dark:text-gray-100">Modelos de ML/DL:</strong>
+              Implementación de soluciones de Machine Learning y Deep Learning para clasificación, regresión, clustering y más.
+            </div>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-green-500 mt-1">✓</span> 
+            <div>
+              <strong class="block text-gray-800 dark:text-gray-100">Visualización de Datos / ETL:</strong>
+              Creación de dashboards interactivos, informes y procesos ETL (Extract, Transform, Load) para datos estructurados y no estructurados.
+            </div>
+          </li>
+        </ul>
+      </article>
+    </div>
+    
+    <div class="text-center mt-10">
+      <a href="/contacto" 
+         class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg 
+                hover:bg-blue-700 transition duration-300 shadow-md">
+        ¡Hablemos de tu proyecto!
+      </a>
+    </div>
+
+  </section>
   
   <section id="proyectos-destacados" class="py-12">
     <h2 class="text-3xl font-bold mb-8 border-b-2 pb-2 

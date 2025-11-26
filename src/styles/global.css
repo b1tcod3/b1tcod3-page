@@ -1,7 +1,15 @@
 /* src/styles/global.css */
 
 @import "tailwindcss";
-@tailwind components;
-@tailwind utilities;
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --logo-stroke: #003366;
+  --logo-fill: #ffffff;
+}
+
+.dark {
+  --logo-stroke: #ffffff;
+  --logo-fill: #ffffff;
+}

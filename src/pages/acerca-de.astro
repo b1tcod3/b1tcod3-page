@@ -1,0 +1,70 @@
+---
+// src/pages/acerca-de.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Acerca de Mí | Portafolio Ligero">
+  <section class="py-12">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-6 
+               text-blue-600 dark:text-blue-400">
+      Acerca de mi Enfoque
+    </h1>
+
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+      Soy un **desarrollador apasionado por la eficiencia y el rendimiento**. Mi filosofía se centra en la construcción de **experiencias web rápidas y ligeras**, creyendo firmemente que el usuario no debería esperar por contenido innecesario o librerías pesadas. 
+      Utilizo un enfoque minimalista, priorizando el impacto directo y la robustez sobre la complejidad.
+    </p>
+
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+      Cada proyecto que emprendo, ya sea personal o colaborativo, busca desafiar el estándar de lo que puede ser una aplicación web moderna sin sacrificar velocidad. Minimizar dependencias, optimizar el tiempo de carga y ofrecer una experiencia fluida son los pilares de mi trabajo.
+    </p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold mb-4 border-b-2 pb-2 
+               border-blue-200 dark:border-blue-800">
+      Tecnologías y Enfoque
+    </h2>
+    <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2">
+      <li class="flex items-center gap-2">
+        <span class="text-blue-500">◆</span> **Desarrollo Web Estático (SSG):** Aprovechando herramientas como Astro para generar HTML/CSS/JS optimizado en tiempo de construcción.
+      </li>
+      <li class="flex items-center gap-2">
+        <span class="text-blue-500">◆</span> **JavaScript Vanilla:** Foco en la lógica pura del navegador sin la sobrecarga de frameworks en el cliente.
+      </li>
+      <li class="flex items-center gap-2">
+        <span class="text-blue-500">◆</span> **TailwindCSS:** Para estilos rápidos, responsivos y altamente personalizables, manteniendo el CSS lo más compacto posible.
+      </li>
+      <li class="flex items-center gap-2">
+        <span class="text-blue-500">◆</span> **Optimización de Rendimiento:** Experiencia en Core Web Vitals, optimización de imágenes y carga de recursos.
+      </li>
+      <li class="flex items-center gap-2">
+        <span class="text-blue-500">◆</span> **Markdown y Frontmatter:** Para una gestión de contenido eficiente y flexible.
+      </li>
+    </ul>
+  </section>
+
+  <section class="text-center py-10 border-t 
+                   border-gray-200 dark:border-gray-700">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+      ¿Listo para construir algo rápido y ligero?
+    </h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+      Explora mis proyectos o contacta conmigo para colaborar en tu próxima idea.
+    </p>
+    <div class="flex justify-center gap-4">
+      <a href="/proyectos" 
+         class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg 
+                hover:bg-blue-700 transition duration-300 shadow-md">
+        Ver Proyectos
+      </a>
+      <a href="TU_ENLACE_LINKEDIN" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="bg-transparent text-gray-700 dark:text-gray-300 font-semibold py-3 px-6 rounded-lg 
+                border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300">
+        Conectar en LinkedIn
+      </a>
+    </div>
+  </section>
+</BaseLayout>
